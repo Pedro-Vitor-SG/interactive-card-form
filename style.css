@@ -177,7 +177,7 @@ input::placeholder {
     left: 0;
   }
  .numbers-card{
-  font-size: 19px;
+  font-size: 14px;
   letter-spacing: .09rem;
  }
  .front-card {
@@ -192,7 +192,7 @@ input::placeholder {
   height: 30px;
  }
  .name-due {
-  font-size: 12px;
+  font-size: 10px;
  }
   .back-card span{
     top: 62px;
