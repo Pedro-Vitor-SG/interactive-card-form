@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Frontend Mentor | Interactive card details form</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body>
+    <main class="main">
+      <section class="cards">
+        <div class="card front-card">
+          <img src="./images/card-logo.svg" alt="" />
+          <div>
+            <p class="numbers-card" id="numbers-card">0000 0000 0000 0000</p>
+            <p class="name-due">
+              <span class="nome-card" id="name-card"> Jane Appleseed </span>
+              <span> <span id="mm-card">00</span> / <span id="yy-card">00</span> </span>
+            </p>
+          </div>
+        </div>
+
+        <div class="card back-card"><span id="cvc-card">000</span></div>
+      </section>
+
+      <seciton class="form" id="form">
+        <form>
+          <fieldset>
+            <label for="name">Cardholder Name</label>
+            <input
+              required
+              type="text"
+              name="name"
+              id="name"
+              placeholder="e.g. Jane Appleseed"
+            />
+            <p id="error-nome-card" class="error-msg">Invalid Name</p>
+          </fieldset>
+
+          <fieldset>
+            <label for="card-number">Card Number</label>
+            <input
+              type="text"
+              name="card-number"
+              id="card-number"
+              placeholder="e.g. 1234 5678 9123 0000"
+              maxlength="19"
+            />
+            <p id="error-number-card" class="error-msg">
+              Wrong format, numbers only
+            </p>
+            <p id="error-number-card-blank" class="error-msg">Can`t be blank</p>
+          </fieldset>
+
+          <div class="data-form">
+            <fieldset>
+              <label for="exp-date">Exp. Date (MM/YY)</label>
+              <div>
+                <input
+                  type="text"
+                  name="exp-date"
+                  id="exp-mm"
+                  placeholder="MM"
+                  maxlength="2"
+                  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                />
+                <input
+                  type="text"
+                  name="exp-yy"
+                  id="exp-yy"
+                  placeholder="YY"
+                  maxlength="2"
+                  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                />
+              </div>
+              <p id="error-date-card" class="error-msg">Can`t be blank</p>
+            </fieldset>
+
+            <fieldset>
+              <label for="cvc">CVC</label>
+              <input
+                type="text"
+                name="cvc"
+                id="cvc"
+                placeholder="e.g. 123"
+                maxlength="3"
+                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+              />
+              <p id="error-cvc-card" class="error-msg">Can`t be blank</p>
+            </fieldset>
+          </div>
+
+          <button id="confirm-form" class="main-button">Confirm</button>
+        </form>
+      </seciton>
+
+      <section class="passed-form" id="passed-form">
+        <img src="./images/icon-complete.svg" alt="" />
+        <h2>Thank you!</h2>
+        <p>We've added your card details</p>
+        <button class="main-button">Continue</button>
+      </section>
+    </main>
+    <!-- Completed state start -->
+
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+    <!--  -->
+  </body>
+</html>

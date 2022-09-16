@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap");
+:root {
+  --gradient-input: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+  --error-input: hsl(0, 100%, 66%);
+  --light-violet: hsl(270, 3%, 87%);
+  --dark-violet: hsl(279, 6%, 55%);
+  --very-dark-violet: hsl(278, 68%, 11%);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: url(./images/bg-main-desktop.png) no-repeat;
+}
+.main {
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.card {
+  width: 445px;
+  height: 245px;
+  border-radius: 10px;
+
+  color: #fff;
+  box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, 0.75);
+}
+
+.front-card {
+  background: url(./images/bg-card-front.png);
+  background-size: cover;
+  padding: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  position: relative;
+  left: 40px;
+}
+.front-card div {
+  width: 100%;
+}
+.numbers-card {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+.name-due {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.back-card {
+  background: url(./images/bg-card-back.png);
+  background-size: cover;
+  position: relative;
+  left: 150px;
+}
+.back-card span {
+  position: relative;
+  top: 110px;
+  left: 350px;
+}
+form {
+  width: 360px;
+}
+fieldset {
+  border: none;
+  margin-bottom: 25px;
+}
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  color: var(--very-dark-violet);
+}
+input {
+  font-size: 16px;
+  width: 100%;
+  padding: 13px;
+  border: var(--light-violet) 1px solid;
+  border-radius: 5px;
+  color: var(--very-dark-violet);
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus {
+  border: 1px solid blueviolet;
+}
+input::placeholder {
+  color: var(--light-violet);
+  font-weight: 600;
+  font-family: "Space Grotesk", sans-serif;
+}
+#card-number {
+  text-transform: uppercase;
+}
+.input-error,
+.input-error:focus {
+  border: 1px solid var(--error-input);
+}
+
+.error-msg {
+  display: none;
+  color: var(--error-input);
+}
+.data-form {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+}
+.data-form div {
+  display: flex;
+  margin-right: 20px;
+}
+.data-form div input:first-of-type {
+  margin-right: 10px;
+}
+.main-button {
+  width: 100%;
+  font-size: 16px;
+  padding: 15px 0;
+  color: #fff;
+  background-color: var(--very-dark-violet);
+  border-radius: 10px;
+  border: none;
+  transition: 0.3s;
+}
+.main-button:hover {
+  cursor: pointer;
+  background-color: rgba(33, 9, 47, 0.9);
+}
+
+.passed-form {
+  display: none;
+
+  text-align: center;
+  width: 360px;
+}
+.passed-form h2 {
+  text-transform: uppercase;
+  margin: 20px 0px;
+}
+.passed-form p {
+  color: var(--dark-violet);
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+@media screen and (max-width:991px){
+  body{
+    background:url(./images/bg-main-mobile.png) no-repeat;
+    background-size: 100% 220px;
+  }
+  .main{
+    padding: 30px 15px;
+    flex-direction: column;
+    justify-content: inherit;
+  }
+  .cards {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .card{
+    width: 280px;
+    height: 150px;
+    left: 0;
+  }
+ .numbers-card{
+  font-size: 19px;
+  letter-spacing: .09rem;
+ }
+ .front-card {
+  z-index: 2;
+  left: -30px;
+  top: -63px;
+ }
+ .back-card{
+  left: 30px;
+ }
+ .front-card img {
+  height: 30px;
+ }
+ .name-due {
+  font-size: 12px;
+ }
+  .back-card span{
+    top: 62px;
+    font-size: 12px;
+    left: 220px;
+  }
+  form{
+    width: 345px;
+    padding: 0 15px;
+    position: relative;
+    top: -45px;
+  }
+  .passed-form{
+    top: -45px;
+    padding: 0 15px;
+    width: 345px;
+    position: relative;
+  }
+  .passed-form img{
+    height: 60px;
+  }
+  .passed-form h2{
+    font-size: 24px;
+    margin: 10px 0;
+  }
+  .passed-form p {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width:992px) and ( max-width:1191px) {
+  body{
+    background-size: contain;
+  }
+  .front-card {
+    left: 0;
+  }
+  .back-card{
+    left: 60px;
+  }
+}
